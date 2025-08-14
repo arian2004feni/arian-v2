@@ -1,8 +1,109 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default;
+  themes: light, dark;
 }
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Light theme */
+@plugin "daisyui/theme" {
+  name: light;
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+
+  --color-base-100: #f9fafb;
+  --color-base-200: #e5e7eb;
+  --color-base-300: #d1d5db;
+  --color-base-content: #111827;
+
+  --color-primary: #10B981;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #14b8a6;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #06b6d4;
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #111827;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #0ea5e9;
+  --color-info-content: #ffffff;
+
+  --color-success: #22c55e;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #000000;
+
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+/* Dark theme (ready but not enabled) */
+@plugin "daisyui/theme" {
+  name: dark;
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+
+  --color-base-100: #0f172a;
+  --color-base-200: #1e293b;
+  --color-base-300: #334155;
+  --color-base-content: #f1f5f9;
+
+  --color-primary: #34d399;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #14b8a6;
+  --color-secondary-content: #ffffff;
+
+  --color-accent: #06b6d4;
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #242424;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #0ea5e9;
+  --color-info-content: #ffffff;
+
+  --color-success: #22c55e;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #000000;
+
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0.1;
+}
+
 
 body {
     font-family: 'Space Grotesk', sans-serif;
+}
+
+.custom-container {
+  @apply container px-6 2xl:px-40 mx-auto;
+}
+
+.section-heading {
+  @apply text-4xl max-[450px]:text-2xl lg:text-center text-primary font-bold mb-6 sm:mb-12;
 }
